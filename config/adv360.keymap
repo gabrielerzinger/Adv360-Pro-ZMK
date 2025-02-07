@@ -18,6 +18,13 @@
             bindings = <&kp RET>;
         };
 
+        dylan_test_2: dylan_test_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp Y &kp L &kp A &kp N>;
+            label = "DYLAN_TEST_2";
+        };
+
         #endif
 
         hm: homerow_mods {
