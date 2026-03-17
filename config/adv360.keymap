@@ -33,9 +33,22 @@
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LS(V))>, <&macro_press>;
-
+            bindings = <&kp LG(LS(V))>;
             label = "PASTE";
+        };
+
+        sff: sff {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp F &kp F>;
+            label = "SFF";
+        };
+
+        sfp: sfp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp F &kp P>;
+            label = "SFP";
         };
     };
 
@@ -45,11 +58,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1      &kp N2       &kp N3       &kp N4      &kp N5  &tog 1                                                   &mo 3      &kp N6  &kp N7      &kp N8       &kp N9       &kp N0         &kp MINUS
-&kp TAB    &kp Q       &kp W        &kp E        &kp R       &kp T   &none                                                    &copy      &kp Y   &kp U       &kp I        &kp O        &kp P          &kp BSLH
-&kp ESC    &hm LGUI A  &hm LCTRL S  &hm LSHFT D  &hm LALT F  &kp G   &none     &kp LGUI  &kp LCTRL      &kp LGUI   &kp RCTRL  &paste     &kp H   &hm RALT J  &hm RSHFT K  &hm RCTRL L  &hm RGUI SEMI  &kp SQT
-&kp LSHFT  &kp Z       &kp X        &kp C        &kp V       &kp B                       &kp HOME       &kp PG_UP                        &kp N   &kp M       &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
-&mo 2      &kp GRAVE   &kp LALT     &kp LEFT     &kp RIGHT           &kp BSPC  &kp DEL   &kp END        &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP      &kp DOWN     &kp LBKT     &kp RBKT       &mo 2
+&kp EQUAL  &kp N1      &kp N2       &kp N3       &kp N4      &kp N5  &tog 1                                                    &mo 3      &kp N6  &kp N7      &kp N8       &kp N9       &kp N0         &kp MINUS
+&kp TAB    &kp Q       &kp W        &kp E        &kp R       &kp T   &kp LC(Q)                                                 &copy      &kp Y   &kp U       &kp I        &kp O        &kp P          &kp BSLH
+&kp ESC    &hm LGUI A  &hm LCTRL S  &hm LSHFT D  &hm LALT F  &kp G   &kp LC(A)  &kp LGUI  &kp LCTRL      &kp LGUI   &kp RCTRL  &paste     &kp H   &hm RALT J  &hm RSHFT K  &hm RCTRL L  &hm RGUI SEMI  &kp SQT
+&kp LSHFT  &kp Z       &kp X        &kp C        &kp V       &kp B                        &kp HOME       &kp PG_UP                        &kp N   &kp M       &kp COMMA    &kp DOT      &kp FSLH       &kp RSHFT
+&mo 2      &kp GRAVE   &kp LALT     &kp LEFT     &kp RIGHT           &kp BSPC   &kp DEL   &kp END        &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP      &kp DOWN     &kp LBKT     &kp RBKT       &mo 2
             >;
         };
 
@@ -68,8 +81,8 @@
             display-name = "Fn";
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 3   &kp F7          &kp F8             &kp F9        &kp F10     &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &none                                       &none   &kp C_PREV      &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp C_NEXT  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &sfp                                        &none   &kp C_PREV      &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp C_NEXT  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &sff    &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT   &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans          &trans             &trans        &trans      &trans   &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                  &trans             &trans        &trans      &trans   &trans
             >;
